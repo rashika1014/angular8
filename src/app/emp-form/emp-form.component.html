@@ -1,0 +1,31 @@
+<button class="btn btn-primary btn-xs pull-right" style="float: right;" (click)="logout()">LogOut</button>
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle" style="max-width: 100%;">
+    <a (click)="addNewEmp()" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new</a>
+
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Age</th>
+                <th>Image</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.employee_name}}</td>
+            <td>{{employee.employee_salary}}</td>
+            <td>{{employee.employee_age}}</td>
+            <td><img style="height:100%; width: 100%;" src="{{employee.profile_image}}" /></td>
+
+            <td class="text-center">
+                <a (click)="deleteEmp(employee.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>Del</a>
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
