@@ -56,7 +56,7 @@ export class EmpFormComponent implements OnInit {
   deleteEmp(id) {
     this.authService.deleteEmp(id).subscribe(response => {
       if(response){
-        alert("Deleted !!!")
+        // alert("Deleted !!!")
 
       }
     },
